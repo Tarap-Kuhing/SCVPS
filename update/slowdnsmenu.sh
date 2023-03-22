@@ -95,7 +95,7 @@ Opcao9 () {
 Opcao10 () {
     clear
     bash /etc/SLDNS/install
-"https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/SLDNS/slowdns.sh"
+"https://github.com/khaledagn/SlowDNS/raw/main/install"
     chmod +x slowdns.sh
     bash slowdns.sh
 }
