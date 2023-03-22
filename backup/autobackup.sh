@@ -97,7 +97,7 @@ echo -e "
 Ini adalah isi email percobaaan kirim email dari vps
 IP VPS : $IP
 Tanggal : $date
-" | mail -s "Percobaan Pengiriman Email" $email
+" | mail -s "Percobaan Pengiriman Email By TARAP KUHING" $email
 }
 clear
 echo -e "=============================="
