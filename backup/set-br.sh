@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 # Link Hosting Kalian
-"https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup"
+"https://github.com/Tarap-Kuhing/SCVPS/main/backup"
 
 apt install rclone -y
 printf "q\n" | rclone config
@@ -36,18 +36,18 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user bckupvpns@gmail.com
-from bckupvpns@gmail.com
-password Yangbaru1
+user jambanbkn@gmail.com
+from jambanbkn@gmail.com
+password houaqlmgmqvjdxnb
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup/autobackup.sh"
-wget -O backup "https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup/backup.sh"
-wget -O restore "https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup/restore.sh"
-wget -O strt "https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup/strt.sh"
-wget -O limitspeed "https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup/limitspeed.sh"
+wget -O autobackup "https://github.com/Tarap-Kuhing/SCVPS/main/backup/autobackup.sh"
+wget -O backup "https://github.com/Tarap-Kuhing/SCVPS/main/backup/backup.sh"
+wget -O restore "https://github.com/Tarap-Kuhing/SCVPS/main/backup/restore.sh"
+wget -O strt "https://github.com/Tarap-Kuhing/SCVPS/main/backup/strt.sh"
+wget -O limitspeed "https://github.com/Tarap-Kuhing/SCVPS/main/backup/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore
