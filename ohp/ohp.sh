@@ -1,6 +1,6 @@
 #!/bin/bash
-# Open Http Puncher
-# Tarap Kuhing
+# Ohp Script
+# Mod By TARAP KUHING
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -13,16 +13,6 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl ipinfo.io/ip | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Fuck You!!"
-exit 0
-fi
 
 # Download File Ohp
 wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip
@@ -36,7 +26,7 @@ cp ohpserver /usr/local/bin/ohpserver
 cat > /etc/systemd/system/ssh-ohp.service << END
 [Unit]
 Description=SSH OHP Redirection Service
-Documentation=nekopoi.care
+Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
 [Service]
@@ -57,7 +47,7 @@ END
 cat > /etc/systemd/system/dropbear-ohp.service << END
 [Unit]]
 Description=Dropbear OHP Redirection Service
-Documentation=https://nekopoi.care
+Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
 [Service]
@@ -78,7 +68,7 @@ END
 cat > /etc/systemd/system/openvpn-ohp.service << END
 [Unit]]
 Description=OpenVPN OHP Redirection Service
-Documentation=nekopoi.care
+Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
 [Service]
@@ -103,7 +93,7 @@ systemctl restart dropbear-ohp
 systemctl enable openvpn-ohp
 systemctl restart openvpn-ohp
 #------------------------------
-printf 'INSTALLATION BY TARAP KUHING !\n'
+printf 'INSTALLATION COMPLETED !\n'
 sleep 0.5
 printf 'CHECKING LISTENING PORT\n'
 if [ -n "$(ss -tupln | grep ohpserver | grep -w 8181)" ]
