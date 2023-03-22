@@ -27,7 +27,7 @@ echo -e          "$y============================================================
 echo -e          "\E[44;1;39m               ⇱ SC BY TARAP KUHING ⇲               \E[0m"
 echo -e          "$y================================================================$wh"
 echo -e ""
-read -p "Select From Options [ 1 - 60 ] : " menu
+read -p "Select From Options [ 1 - 14 ] : " menu
 echo -e ""
 case $menu in
 1)
