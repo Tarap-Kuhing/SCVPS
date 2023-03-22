@@ -94,10 +94,10 @@ Opcao9 () {
 
 Opcao10 () {
     clear
-    bash /etc/SLDNS/install
-"https://github.com/khaledagn/SlowDNS/raw/main/install"
-    chmod +x slowdns.sh
-    bash slowdns.sh
+    bash /etc/SlowDNS/install
+wget https://github.com/khaledagn/SlowDNS/raw/main/install
+    chmod +x install
+    bash install
 }
 
 Opcao11 () {
@@ -105,7 +105,7 @@ Opcao11 () {
     bash /etc/slowdns/remove-slow
     echo -e "\033[0;31mPengelola SlowDNS Dicopot!\033[0m"
     sleep 2
-    rm /bin/SLDNS
+    rm /bin/SlowDNS
 }
 
 Sair() {
