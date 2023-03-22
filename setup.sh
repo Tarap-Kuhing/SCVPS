@@ -52,7 +52,7 @@ exit 0
 fi
 mkdir /var/lib/crot;
 echo "IP=" >> /var/lib/crot/ipvps.conf
-wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/slhost.sh && chmod +x slhost.sh && ./slhost.sh
 #
 #install ssh ovpn
 wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
