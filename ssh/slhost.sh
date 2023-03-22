@@ -22,7 +22,7 @@ DOMAIN=kuhing.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 SUB_DOMAIN=${sub}.kuhing.my.id
-NS_DOMAIN=${subsl}Ns.tarong.my.id
+NS_DOMAIN=${subsl}.tarong.my.id
 CF_ID=merahjambo@gmail.com
 CF_KEY=KEY=86431de017f7bf317c3960061da2f87c8effb
 set -euo pipefail
