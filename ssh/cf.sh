@@ -32,10 +32,10 @@ echo -e  "\033[0;36m|    MOD DARI SAYA BY TARAP KUHING           |\033[m"
 echo -e  "\033[1;31m|============================================|\033[0m"
 read -rp " TEKAN ENTER UNTUK MELANJUTKAN "
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.tarong.my.id
+SUB_DOMAIN=${sub}.kuhing.my.id
 CF_ID=merahjambo@gmail.com
 CF_KEY=86431de017f7bf317c3960061da2f87c8effb
-##SUB_DOMAIN=${sub}.tarong.my.id
+##SUB_DOMAIN=${sub}.kuhing.my.id
 ##CF_ID=merahjambo@gmail.com
 ##CF_KEY=86431de017f7bf317c3960061da2f87c8effb
 set -euo pipefail
