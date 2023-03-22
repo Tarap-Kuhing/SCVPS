@@ -43,11 +43,11 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://github.com/Tarap-Kuhing/SCVPS/main/backup/autobackup.sh"
-wget -O backup "https://github.com/Tarap-Kuhing/SCVPS/main/backup/backup.sh"
-wget -O restore "https://github.com/Tarap-Kuhing/SCVPS/main/backup/restore.sh"
-wget -O strt "https://github.com/Tarap-Kuhing/SCVPS/main/backup/strt.sh"
-wget -O limitspeed "https://github.com/Tarap-Kuhing/SCVPS/main/backup/limitspeed.sh"
+wget -O autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/autobackup.sh"
+wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/restore.sh"
+wget -O strt "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/strt.sh"
+wget -O limitspeed "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore
