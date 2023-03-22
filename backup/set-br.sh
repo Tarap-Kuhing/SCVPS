@@ -19,7 +19,7 @@ echo "Checking VPS"
 apt install rclone -y
 printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/rclone.conf"
-git clone  https://github.com/Tarap-Kuhing/SCVPS/tree/main/backup
+git clone  https://github.com/Tarap-Kuhing/wondershaper.git
 cd wondershaper
 make install
 cd
