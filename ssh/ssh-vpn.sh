@@ -385,8 +385,6 @@ wget -O addtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/troja
 wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/trojango/deltrgo.sh"
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/trojango/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/trojango/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/websocket/portsshws.sh"
 
 wget -O ipsaya "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/update/ipsaya.sh"
 wget -O sshovpnmenu "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/update/sshovpn.sh"
@@ -407,7 +405,11 @@ wget -O slowdnsmenu "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/u
 wget -O running "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/update/running.sh"
 wget -O updatemenu "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/update/updatemenu.sh"
 wget -O sl-fix "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/sslh-fix/sl-fix"
-
+wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/backup.sh"
+wget -O autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/autobackup.sh"
+wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backuo/restore.sh"
+wget -O strt "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/strt.sh"
+wget -O limitspeed "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/limitspeed.sh"
 chmod +x sl-fix
 chmod +x ipsaya
 chmod +x sshovpnmenu
@@ -427,10 +429,6 @@ chmod +x setmenu
 chmod +x slowdnsmenu
 chmod +x running
 chmod +x updatemenu
-
-
-chmod +x portsshnontls
-chmod +x portsshws
 
 chmod +x slhost
 chmod +x addhost
@@ -482,24 +480,45 @@ chmod +x addtrgo
 chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
-echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
-echo "0 0 * * * root xp" >> /etc/crontab
-echo "0 1 * * * root delexp" >> /etc/crontab
-echo "10 4 * * * root clearlog && sslh-fix-reboot" >> /etc/crontab
-echo "0 0 * * * root clearlog && reboot" >> /etc/crontab
-echo "0 12 * * * root clearlog && reboot" >> /etc/crontab
-echo "0 18 * * * root clearlog && reboot" >> /etc/crontab
+chmod +x backup
+chmod +x autobackup
+chmod +x restore
+chmod +x strt
+cd
 
+cat > /etc/cron.d/re_otm <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 2 * * * root /sbin/reboot
+END
+
+cat > /etc/cron.d/xp_otm <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 0 * * * root /usr/bin/xp
+END
+
+cat > /home/re_otm <<-END
+7
+END
+
+service cron restart >/dev/null 2>&1
+service cron reload >/dev/null 2>&1
 
 # remove unnecessary files
-cd
-apt autoclean -y
-apt -y remove --purge unscd
-apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
-apt-get -y --purge remove bind9*;
-apt-get -y remove sendmail*
-apt autoremove -y
+sleep 0.5
+echo -e "[ ${green}INFO$NC ] Clearing trash"
+apt autoclean -y >/dev/null 2>&1
+
+if dpkg -s unscd >/dev/null 2>&1; then
+apt -y remove --purge unscd >/dev/null 2>&1
+fi
+
+apt-get -y --purge remove samba* >/dev/null 2>&1
+apt-get -y --purge remove apache2* >/dev/null 2>&1
+apt-get -y --purge remove bind9* >/dev/null 2>&1
+apt-get -y remove sendmail* >/dev/null 2>&1
+apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
@@ -514,6 +533,7 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/vnstat restart
 /etc/init.d/fail2ban restart
 /etc/init.d/squid restart
+
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
