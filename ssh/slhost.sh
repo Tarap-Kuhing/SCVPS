@@ -22,7 +22,7 @@ DOMAIN=kuhing.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 SUB_DOMAIN=${sub}.kuhing.my.id
-NS_DOMAIN=${subsl}.tarong.my.id
+NS_DOMAIN=${subsl}.kuhing.my.id
 CF_ID=merahjambo@gmail.com
 CF_KEY=KEY=86431de017f7bf317c3960061da2f87c8effb
 set -euo pipefail
@@ -76,7 +76,6 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      -H "Content-Type: application/json" \
      --data '{"type":"NS","name":"'${NS_DOMAIN}'","content":"'${SUB_DOMAIN}'","ttl":120,"proxied":false}')
 rm -rf /etc/xray/domain
-rm -rf /etc/v2ray/domain
 rm -rf /root/nsdomain
 echo "IP=""$SUB_DOMAIN" >> /var/lib/crot/ipvps.conf
 echo "Host : $SUB_DOMAIN"
@@ -84,5 +83,4 @@ echo $SUB_DOMAIN > /root/domain
 echo "Host SlowDNS : $NS_DOMAIN"
 echo "$NS_DOMAIN" >> /root/nsdomain
 echo "$SUB_DOMAIN" >> /etc/xray/domain
-echo "$SUB_DOMAIN" >> /etc/v2ray/domain
 cd
