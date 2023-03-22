@@ -407,7 +407,7 @@ wget -O updatemenu "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/up
 #wget -O sl-fix "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/sslh-fix/sl-fix"
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/backup.sh"
 wget -O autobackup "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/autobackup.sh"
-wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backuo/restore.sh"
+wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/restore.sh"
 wget -O strt "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/strt.sh"
 wget -O limitspeed "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/limitspeed.sh"
 #chmod +x sl-fix
