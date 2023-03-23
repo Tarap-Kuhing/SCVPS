@@ -26,7 +26,7 @@ commonname=none
 email=none
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -132,8 +132,8 @@ install_ssl(){
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -141,12 +141,12 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/index.html1"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/index.html1"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -355,11 +355,11 @@ wget -O ceklim "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/ce
 wget -O tendang "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/tendang.sh"
 wget -O clearlog "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/clearlog.sh"
 wget -O changeport "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/changeport.sh"
-wget -O portovpn "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portovpn.sh"
-wget -O portwg "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portwg.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/porttrojan.sh"
-wget -O portsstp "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portsstp.sh"
-wget -O portsquid "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portsquid.sh"
+#wget -O portovpn "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portovpn.sh"
+#wget -O portwg "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portwg.sh"
+#wget -O porttrojan "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/porttrojan.sh"
+#wget -O portsstp "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portsstp.sh"
+#wget -O portsquid "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portsquid.sh"
 wget -O portvlm "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/portvlm.sh"
 wget -O wbmn "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/xp.sh"
