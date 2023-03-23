@@ -17,28 +17,7 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
-# ==========================================
-# Link Hosting Kalian Untuk Ssh Vpn
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/ssh"
-# Link Hosting Kalian Untuk Sstp
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/sstp"
-# Link Hosting Kalian Untuk Ssr
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/ssr"
-# Link Hosting Kalian Untuk Shadowsocks
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/shadowsocks"
-# Link Hosting Kalian Untuk Wireguard
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/wireguard"
-# Link Hosting Kalian Untuk Xray
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/xray"
-# Link Hosting Kalian Untuk Ipsec
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/ipsec"
-# Link Hosting Kalian Untuk Backup
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/backup"
-# Link Hosting Kalian Untuk Websocket
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/websocket"
-# Link Hosting Kalian Untuk Ohp
-tarapkuhing="http://github.com/Tarap-Kuhing/SCVPS/main/ohp"
-
+# =========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
@@ -52,7 +31,7 @@ exit 0
 fi
 mkdir /var/lib/crot;
 echo "IP=" >> /var/lib/crot/ipvps.conf
-wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/slhost.sh && chmod +x slhost.sh && ./slhost.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 #
 #install ssh ovpn
 wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
@@ -69,7 +48,7 @@ wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ipsec/ipsec.sh &&
 #
 wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # Websocket
-wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/websocket//edu.sh && chmod +x edu.sh && ./edu.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/websocket/edu.sh && chmod +x edu.sh && ./edu.sh
 # Ohp Server
 wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 # Install Slowdns Server
@@ -78,7 +57,7 @@ wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/SLDNS/install-sld
 #wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ipsaya.sh && chmod +x ipsaya.sh
 #
 # install xray grpc
-#wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/grpc/sl-grpc.sh && chmod +x sl-grpc.sh && screen -S sl-grpc ./sl-grpc.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/grpc/sl-grpc.sh && chmod +x sl-grpc.sh && screen -S sl-grpc ./sl-grpc.sh
 #
 #install xray
 wget https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
