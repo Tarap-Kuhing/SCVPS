@@ -25,7 +25,7 @@ exit 0
 fi
 apt install jq curl -y
 IP=$(wget -qO- icanhazip.com)
-DOMAIN=tarong.my.id
+DOMAIN=kuhing.my.id
 echo -e  "\033[1;31m|============================================|\033[0m"
 echo -e  "\033[0;36m|    TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   |\033[m"
 echo -e  "\033[0;36m|    MOD DARI SAYA BY TARAP KUHING           |\033[m"
