@@ -16,7 +16,7 @@ mkdir -p /usr/bin/xray
 mkdir -p /usr/bin/v2ray
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
-echo "$SUB_DOMAIN" >> /etc/v2ray/domain
+echo "$SUB_DOMAIN" >> /etc/xray/domain
 #
 DOMAIN=kuhing.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
